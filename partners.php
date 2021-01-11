@@ -11,7 +11,7 @@ if(isset($_SESSION['auth']) && $bdd != null){
 }else{
     header("Location: login.php");
 }  
-// on récupère tous les acteurs
+// on récupère l'acteur voulu
 $partner = findPartner($_GET['id'],$bdd);
 if($partner){ 
     if(isset($_POST['comment'])){   // ajout d'un commentaire demandé
@@ -51,8 +51,9 @@ if($partner){
 
 /**
  * récupère un commentaire selon son créateur et celui qu'il concerne
- * @param $id_user
- * @param $id_acteur
+ * @param id_user
+ * @param id_acteur
+ * @param bdd
  * @return
  */
 function findPost($id_user, $id_acteur,$bdd){
@@ -66,6 +67,7 @@ function findPost($id_user, $id_acteur,$bdd){
 /**
 *	Récupère tous les commentaires sur le partenaire indiqué
 *	@param int $partner_id 
+*   @param bdd
 *	@return array
 */
 function getPostsByPartnerId($id_acteur,$bdd){  
@@ -86,7 +88,8 @@ function getPostsByPartnerId($id_acteur,$bdd){
 /**
  * récupère le nombre de like/dislike concernant un partenaire
  * @param id_acteur
- * @param bool true pour récupérer les like, false pour les dislike
+ * @param bool like true pour récupérer les like, false pour les dislike
+ * @param bdd
  * @return
  */
 function countVote($id_acteur, bool $like, $bdd){
@@ -101,9 +104,10 @@ function countVote($id_acteur, bool $like, $bdd){
 
 /**
  * appel la fonction qui sauve la vote en bdd et retourne false si le vote existe deja
- * @param $id_user 
- * @param $id_acteur
- * @param $like 
+ * @param int id_user 
+ * @param int id_acteur
+ * @param bool like indique s'il s'agit d'un like (true) ou d'un dislike (false)
+ * @param bdd
  * @return false si 1 vote associé à id_user & id_acteur existe deja
  */
 function vote($id_user,$id_acteur,bool $like,$bdd){
@@ -125,8 +129,9 @@ function vote($id_user,$id_acteur,bool $like,$bdd){
 
 /**
  * récupère le vote correspondant aux paramètres
- * @param $id_user
- * @param $id_acteur
+ * @param id_user
+ * @param id_acteur
+ * @param bdd
  * @return
  */
 function findVote($id_user, $id_acteur,$bdd){
@@ -137,7 +142,7 @@ function findVote($id_user, $id_acteur,$bdd){
 
 /**
  * formate un texte en ajoutant des <li></li> si un ':' est suivi de ';'
- * @param $text le texte à formatter
+ * @param string text le texte à formatter
  * @return
  */
 function formatText($text){

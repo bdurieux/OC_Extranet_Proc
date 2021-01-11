@@ -1,7 +1,7 @@
 <?php
 /**
  * vérifie la validité des paramètres du compte
- * @param @params 
+ * @param params variable $_POST
  * @return array renvoie un tableau contenant $message et $errors
  */
 function checkParam($params){
@@ -29,6 +29,7 @@ function checkParam($params){
 
 /**
  * nettoie une chaine de caractère
+ * @param string data la chaine à nettoyer
  * @return
  */
 function secure($data){
@@ -41,6 +42,7 @@ function secure($data){
 /**
  * récupère le compte dont on fourni le pseudo en paramètre
  * @param username 
+ * @param bdd
  * @return 
  */
 function findUserByUsername($username,$bdd){
@@ -53,7 +55,8 @@ function findUserByUsername($username,$bdd){
 
 /**
  * récupère le compte qui a l'id fourni en paramètre
- * @param $id 
+ * @param id 
+ * @param bdd
  * @return 
  */
 function findUser($id,$bdd){
@@ -66,6 +69,7 @@ function findUser($id,$bdd){
 
 /**
  * récupère la liste des acteurs par ordre alphabétique
+ * @param bdd
  * @return 
  */
 function getPartnersOrdered($bdd){
@@ -78,7 +82,8 @@ function getPartnersOrdered($bdd){
 
 /**
  * récupère l'acteur qui a l'id fourni en paramètre
- * @param $id 
+ * @param id 
+ * @param bdd
  * @return 
  */
 function findPartner($id,$bdd){

@@ -4,7 +4,7 @@ session_start();
 include("connexionDB.php");
 include("library.php");
 
-$hide = true;
+$hide = true;   // cache la question secrete
 $question = "Entrez votre pseudo et répondez à la question.";
 $message .= "";		
 if (!empty($_POST) && $bdd != null) {

@@ -33,6 +33,11 @@ $subtitle ="Accueil";
     <?php include("header.php"); ?>
     <!-- MAIN -->
     <div class="content" style="padding-top: 30px">
+        <?php if(!empty($message)): ?>
+            <div class="alert alert-danger">
+                <?= $message; ?>
+            </div>
+        <?php endif; ?>
         <section id="presentation">
             <div class="presentation2">
                 <div class="item-1"><img src="images/banque_postale.png" alt="logo Banque Postale"></div>

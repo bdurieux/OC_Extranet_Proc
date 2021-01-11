@@ -16,8 +16,9 @@ if (!empty($_POST) && $bdd != null) {
 
 /**
 *	vérifie le mot de passe fourni avec celui en base de donnée
-*	@param $username
-*	@param $password
+*	@param username
+*	@param password
+*   @param bdd
 *	@return boolean renvoie true si le mot de passe correspond
 */
 function login($username, $password,$bdd){

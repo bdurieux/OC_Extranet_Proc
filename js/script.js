@@ -6,17 +6,3 @@ function toggleNewComment() {
       x.style.display = "none";
     }
   }
-
-  function clickAvatar(){
-    document.querySelector('#submit').click();
-  }
-
-  function displayImage(image){
-    if(image.files[0]){ // si une image existe
-      var reader = new FileReader();
-      reader.onload = function(image) {
-        document.querySelector('#avatar').setAttribute('src', image.target.result);
-      }
-      reader.readAsDataURL(image.files[0]);
-    }
-  }

@@ -5,13 +5,10 @@ header {
 	justify-content: space-between;    
     border-bottom: 3px double black;
     background: linear-gradient(to left, #b7dbff, 30%, white 75%);
-
-	/*background-color: lightgreen;   /*  DEBUG    */	
 }
 
 #header1{
     display: flex;
-    /*border: 3px dotted blue;   /*  DEBUG    */
 }
 
 #header1 img{
@@ -20,15 +17,11 @@ header {
     max-width: 150px;   
     min-width: 100px;
     height: auto;
-
-    /*border: 2px solid black;    /*  DEBUG   */
 }
 
 #header2{
 	display: flex;
     flex-direction: column;
-        
-    /*border: 2px solid red;    /*  DEBUG   */
 }
 
 #header2 div{
@@ -49,26 +42,16 @@ header {
 body{
     margin: 1em 16.66%;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;    
-    /*border: 3px solid green; /*  DEBUG   */
+    font-family: 'Montserrat', sans-serif;
 }
-
-/* .container{
-    width: 100%;
-    padding: 0em 1em;
-
-    border: 3px solid red;
-}*/
 
 .content{
     width: auto;
     padding: 0em 1em 0em 1em;
-    /*border: 3px solid pink; /*  DEBUG   */
 } 
 
 #presentation{
     border-bottom: 3px double black;
-    /*border: 3px dotted red; /*  DEBUG   */
 }
 
 .presentation2{
@@ -79,22 +62,17 @@ body{
 	grid-gap: 0px;											
 	grid-template-areas: 
 	"lbp bnp bpce cic ca sg";
-	/* display: flex;
-    flex-direction: column;
-    margin: 2em 0em; */
 }
 
 .presentation2 div{
 	width: 100%;
 	display: flex;
-	/*border: 3px dotted green;/* DEBUG   */
 }
 
 .presentation2 div img{
 	width: 100%;
 	align-self: center;
 	max-width: 200px;
-	/*border: 3px dotted red;/* DEBUG   */
 }
 
 .item-1{
@@ -135,8 +113,6 @@ body{
 	padding: 10px;
 	display: flex;
     flex-direction: column;
-    
-    /*border: 2px solid black;    /*  DEBUG   */
 }
 
 #headerComments{
@@ -153,15 +129,11 @@ body{
     display: flex;    
     justify-content: flex-end;  
     flex-wrap: wrap;  
-
-    /*border: 3px dotted red;    /*   DEBUG   */ 
 }
 
 #review-btn{
     display: flex;
     padding: 0em 1em;
-    
-    /*border: 3px dotted blue;    /*   DEBUG   */
 }
 
 .comment{
@@ -176,40 +148,30 @@ body{
 	max-width: 200px;
     min-width: 100px;
     border-radius: 4px;
-	/*border: 3px dotted blue;    /*   DEBUG   */
 }
 
-.partner{
-	
+.partner{	
 	display: flex;
     margin: 1em 0em;
     box-shadow: 5px 2px 3px black;
     border-radius: 4px;
     background: linear-gradient(to left, #b4dbaf, white 80%);
-
-	/*border: 3px solid blue; /*   DEBUG   */
 }
 
 .partner1{
     align-self: center;
-    /*border: 3px solid blue; /*   DEBUG   */
 }
 
-.partner2{
-    
+.partner2{    
     display: flex;
     flex-grow: 2;
     flex-direction: column;	
-
-	/*border: 3px dotted red;   /*  DEBUG   */
 }
 
 .partnerText{
 	padding: 10px;
 	flex-grow: 2;
     text-align: justify;
-
-	/*border: 3px dotted blue;    /*   DEBUG   */
 }
 
 .partnerBtn{
@@ -221,14 +183,10 @@ body{
     flex-direction: column;
     text-align: justify;
     padding: 1em;
-
-    /*border: 3px dotted green;   /*  DEBUG   */
 }
 
 #partnerLogo{
     margin: auto;
-
-    /*border: 3px dotted red;   /*  DEBUG   */
 }
 
 #partnerLogo img{
@@ -239,8 +197,6 @@ body{
 
 #newComment{
     display: none;
-    
-    /*border: 3px dotted red; /*  DEBUG   */
 }
 
 #avatar-form{
@@ -249,7 +205,6 @@ body{
 
 .avatar-box{
     display: flex;
-    /*border: 3px dotted red; /*  DEBUG   */
 }
 
 #avatar{
@@ -265,9 +220,6 @@ footer {
     text-align: center;
     border-top: 3px double black;
     background: linear-gradient(to top left, #b7dbff, 70%, white);
-
-	/*background-color: orange;   /*  DEBUG    */
-	
 }
 
 footer a{    
@@ -334,8 +286,7 @@ footer a{
 .form-group{
     display: flex;
     flex-direction: column;
-    margin-bottom: 0em;
-    
+    margin-bottom: 0em;    
     width: auto;    
 }
 
@@ -357,8 +308,6 @@ input{
     width: auto;
     padding: 1em;
     border-radius: 4px;
-
-    /*background-color: pink;   /*  DEBUG    */
 }
 
 .alert{
@@ -372,18 +321,6 @@ input{
     background-color: #de6f89;
 }
 
-/* .button{
-    background-color: #1088ff;
-    color: black;
-    padding: 12px 16px;
-    text-align: center;
-    display: inline-block;
-    text-decoration: none;
-    border-radius: 4px;
-    box-shadow: 5px 2px 3px black;
-    cursor: pointer;
-} */
-
 .button{    
     padding: 12px 16px;
     text-align: center;
@@ -396,9 +333,7 @@ input{
 
 .button:hover{
     color: #f7f7f7;
-	/* background-color: #0c6ccc; */
 }
-
 
 .disabled-vote{
     border: 4px solid black;
@@ -411,7 +346,6 @@ input{
 /*  RESPONSIVE    */
 @media screen and (max-width:950px){    /*  TABLETTE    */
     body{
-
         margin: 0em 5%;
         /*background-color: lightyellow; /*  DEBUG   */
     }
@@ -419,11 +353,6 @@ input{
     #partnersText{
         margin: 0em 5%;
     }
-
-    /* .partner{
-        display: flex;
-        flex-direction: column;
-    } */
 
     .partner2{
         display: flex;
@@ -433,8 +362,6 @@ input{
     #block-btn{
         display: flex;
         flex-direction: column;
-    
-        /*border: 3px dotted blue;    /*   DEBUG   */ 
     }
 
     #review-btn{
@@ -450,7 +377,5 @@ input{
 		grid-template-areas: 
 		"lbp bnp bpce "
 		"cic ca sg";
-
-		/*border: 3px solid purple;*/
 	}
 }
