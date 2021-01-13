@@ -1,10 +1,18 @@
+/*   GLOBAL   */
+:root {
+    --clr-bg: #b7dbff;
+    --clr-dark: #191919;
+    --clr-bg2: #b4dbaf;
+    --clr-hover: #f7f7f7;
+}
+
 /* 	HEADER  */
 header {
 	padding: 20px;
 	display: flex;
 	justify-content: space-between;    
     border-bottom: 3px double black;
-    background: linear-gradient(to left, #b7dbff, 30%, white 75%);
+    background: linear-gradient(to left,var(--clr-bg), 30%, white 75%);
 }
 
 #header1{
@@ -155,7 +163,7 @@ body{
     margin: 1em 0em;
     box-shadow: 5px 2px 3px black;
     border-radius: 4px;
-    background: linear-gradient(to left, #b4dbaf, white 80%);
+    background: linear-gradient(to left, var(--clr-bg2), white 80%);
 }
 
 .partner1{
@@ -219,7 +227,7 @@ footer {
 	padding: 2em;
     text-align: center;
     border-top: 3px double black;
-    background: linear-gradient(to top left, #b7dbff, 70%, white);
+    background: linear-gradient(to top left, var(--clr-bg), 70%, white);
 }
 
 footer a{    
@@ -261,7 +269,7 @@ footer a{
 }
 
 .btn-primary:hover{
-    color: #f7f7f7;
+    color:var(--clr-hover);
 	background-color: #0c6ccc;
 }
 
@@ -270,7 +278,7 @@ footer a{
 }
 
 .btn-danger:hover{
-    color: #f7f7f7;
+    color:var(--clr-hover);
 	background-color: #a00c2f;	
 }
 
@@ -279,7 +287,7 @@ footer a{
 }
 
 .btn-success:hover{
-    color: #f7f7f7;
+    color:var(--clr-hover);
 	background-color: #3e9633;
 }
 
@@ -301,7 +309,7 @@ footer a{
     border:none;
     border-radius: 4px;
     box-shadow: 5px 2px 3px black;
-    background: linear-gradient(to top left, #b4dbaf, white);
+    background: linear-gradient(to top left, var(--clr-bg2), white);
 }
 
 input{
@@ -332,7 +340,7 @@ input{
 }
 
 .button:hover{
-    color: #f7f7f7;
+    color: var(--clr-hover);
 }
 
 .disabled-vote{
@@ -347,7 +355,6 @@ input{
 @media screen and (max-width:950px){    /*  TABLETTE    */
     body{
         margin: 0em 5%;
-        /*background-color: lightyellow; /*  DEBUG   */
     }
 
     #partnersText{

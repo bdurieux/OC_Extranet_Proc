@@ -7,16 +7,18 @@ include("library.php");
 $hide = true;   // cache la question secrete
 $question = "Entrez votre pseudo et répondez à la question.";
 $message .= "";		
+$usernamePlaceholder = "";
 if (!empty($_POST) && $bdd != null) {
     // on récupère les données de l'utilisateur en bdd d'après son username
     $user = findUserByUsername(secure($_POST['username']),$bdd);			
     if($user){
         $question = $user['question'];
         $hide =false;
+        $usernamePlaceholder = $_POST['username'];
         if(isset($_POST['reponse'])){
             // vérification des identifiants
             if (password_verify(secure($_POST['reponse']),$user['reponse'])) {
-                header('Location: newPass.php');
+                header('Location: newPass.php?username='.$_POST['username']);
             }else{
                 $message = "Identifiants incorrects.";
             }
@@ -55,7 +57,7 @@ $subtitle ="Mot de passe oublié";
         <form method="post" class="form-1">
             <div class="form-group">
                 <label><strong>Pseudo</strong></label>
-                <input type="text" name="username" value="" required class="form-control">
+                <input type="text" name="username" value="<?= $usernamePlaceholder; ?>" required class="form-control">
             </div>
         	<?php if(!$hide) : ?>
             <div>

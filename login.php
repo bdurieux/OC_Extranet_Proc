@@ -5,11 +5,16 @@ include("connexionDB.php");
 include("library.php");
 
 $message .= "";
+$usernamePlaceholder = "";
+if(!empty($_GET['username'])){
+    $usernamePlaceholder = $_GET['username'];
+}
 if (!empty($_POST) && $bdd != null) {
     //vérification des identifiants
     if (login(secure($_POST['username']),secure($_POST['password']),$bdd)) {
         header('Location: home.php');
     }else{
+        $usernamePlaceholder = $_POST['username'];
         $message = 'Mauvais identifiants';
     }
 }
@@ -64,11 +69,11 @@ $subtitle ="Connexion";
         <form method="post" class="form-1">
             <div class="form-group">
                 <label><strong>Pseudo</strong></label>
-                <input type="text" name="username" value="" required class="form-control">
+                <input type="text" name="username" value="<?= $usernamePlaceholder; ?>" required class="form-control">
             </div>
             <div class="form-group">
                 <label><strong>Mot de passe</strong></label>
-                <input type="text" name="password" value="" required class="form-control">
+                <input type="password" name="password" value="" required class="form-control">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Envoyer</button>

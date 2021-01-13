@@ -23,7 +23,7 @@ if(!empty($_POST)){
                 secure($_POST['question']),
                 password_hash(secure($_POST['reponse']),PASSWORD_DEFAULT)
             ));
-            header('Location: login.php');
+            header('Location: login.php?username='.$_POST['username']);
         }				
     }
 }

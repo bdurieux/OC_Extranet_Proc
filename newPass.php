@@ -5,6 +5,10 @@ include("connexionDB.php");
 include("library.php");
 
 $message .= "";	
+$usernamePlaceholder = "";
+if(!empty($_GET['username'])){
+    $usernamePlaceholder = $_GET['username'];
+}
 if(!empty($_POST) && $bdd != null){		
     // on récupère les données de l'utilisateur en bdd d'après son username	
     $user = findUserByUsername(secure($_POST['username']),$bdd);
@@ -14,9 +18,11 @@ if(!empty($_POST) && $bdd != null){
             $sql = 'UPDATE account SET password = ? WHERE id_user = ?';
             $request = $bdd->prepare($sql);
             $request->execute(array(password_hash(secure($_POST['password1']),PASSWORD_DEFAULT),$user['id_user']));
-            header('Location: login.php');
+            //header('Location: login.php');
+            header('Location: login.php?username='.$_POST['username']);
         }else{
             $message = "Les 2 mots de passe ne correspondent pas.";
+            $usernamePlaceholder = $_POST['username'];
         }
     }else{
         $message = "Pseudo inconnu.";
@@ -51,15 +57,15 @@ $subtitle ="Nouveau mot de passe";
         <form method="post" class="form-1">
             <div class="form-group">
                 <label><strong>Pseudo</strong></label>
-                <input type="text" name="username" value="" required class="form-control">
+                <input type="text" name="username" value="<?= $usernamePlaceholder; ?>" required class="form-control">
             </div>
             <div class="form-group">
                 <label><strong>Nouveau mot de passe</strong></label>
-                <input type="text" name="password1" value="" required class="form-control">
+                <input type="password" name="password1" value="" required class="form-control">
             </div>
             <div class="form-group">
                 <label><strong>Entrez le nouveau mot de passe</strong></label>
-                <input type="text" name="password2" value="" required class="form-control">
+                <input type="password" name="password2" value="" required class="form-control">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Envoyer</button>
