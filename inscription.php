@@ -1,8 +1,8 @@
 <?php 
 session_start();
 // connexion database
-include("connexionDB.php");
-include("library.php");
+require("connexionDB.php");
+require("library.php");
 
 $message = "";		
 if(!empty($_POST)){
@@ -30,7 +30,7 @@ if(!empty($_POST)){
 $subtitle ="Inscription";
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <title>GBAF - <?= $subtitle; ?></title>
     <meta charset="UTF-8"/>

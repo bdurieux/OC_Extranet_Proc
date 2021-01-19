@@ -1,12 +1,12 @@
 <?php 
 session_start();
 // connexion database
-include("connexionDB.php");
+require("connexionDB.php");
 
 $subtitle ="Page introuvable";
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <title>GBAF - <?= $subtitle; ?></title>
     <meta charset="UTF-8"/>

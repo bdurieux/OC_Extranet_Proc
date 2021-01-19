@@ -58,6 +58,7 @@ body{
     padding: 0em 1em 0em 1em;
 } 
 
+/* bloc presentation */
 #presentation{
     border-bottom: 3px double black;
 }
@@ -113,6 +114,7 @@ body{
     border-radius: 5px;
 }
 
+/*  partners    */
 #partners{
     margin-top: 2em;
 }

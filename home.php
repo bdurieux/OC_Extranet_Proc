@@ -1,8 +1,8 @@
 <?php 
 session_start();
 // connexion database
-include("connexionDB.php");
-include("library.php");
+require("connexionDB.php");
+require("library.php");
 
 $message .= "";
 // on vérifie que l'utilisateur est identifié        
@@ -17,7 +17,7 @@ $partners = getPartnersOrdered($bdd);
 $subtitle ="Accueil";
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <title>GBAF - <?= $subtitle; ?></title>
     <meta charset="UTF-8"/>

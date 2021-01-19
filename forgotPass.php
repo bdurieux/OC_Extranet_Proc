@@ -1,8 +1,8 @@
 <?php 
 session_start();
 // connexion database
-include("connexionDB.php");
-include("library.php");
+require("connexionDB.php");
+require("library.php");
 
 $hide = true;   // cache la question secrete
 $question = "Entrez votre pseudo et répondez à la question.";
@@ -31,7 +31,7 @@ if (!empty($_POST) && $bdd != null) {
 $subtitle ="Mot de passe oublié";
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <title>GBAF - <?= $subtitle; ?></title>
     <meta charset="UTF-8"/>

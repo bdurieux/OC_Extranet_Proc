@@ -1,8 +1,8 @@
 <?php 
 session_start();
 // connexion database
-include("connexionDB.php");
-include("library.php");
+require("connexionDB.php");
+require("library.php");
 
 $message .= "";	
 if(isset($_SESSION['auth']) && $bdd != null){
@@ -41,7 +41,7 @@ if(!empty($_POST) && $bdd != null){
 $subtitle ="Paramètre du compte";
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <title>GBAF - <?= $subtitle; ?></title>
     <meta charset="UTF-8"/>
